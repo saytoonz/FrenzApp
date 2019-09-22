@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_image_left"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/message_layout_image_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/shape_bubble_left"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <com.nsromapa.frenzapp.saytalk.views.RoundCornerLayout
+                    android:id="@+id/image_container_left_card"
+                    android:layout_width="240dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/shape_bubble_left"
+                    android:orientation="vertical"
+                    app:bottomLeftEnabled="true"
+                    app:bottomRightEnabled="true"
+                    app:cornerRadius="35dp"
+                    app:topLeftEnabled="false"
+                    app:topRightEnabled="true">
+
+
+                    <ImageView
+                        android:id="@+id/imageview_image_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/image"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/placeholder_image" />
+
+                    <TextView
+                        android:id="@+id/time_image_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingStart="20dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="10dp"
+                        android:text="@string/_12_10_pm"
+                        android:textColor="@color/transparent_white_10"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/image_background" />
+
+
+                </com.nsromapa.frenzapp.saytalk.views.RoundCornerLayout>
+
+                <TextView
+                    android:id="@+id/messageText_image_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxWidth="240dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/caption_is_used_for_image" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/messageText_sender_image_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:maxWidth="240dp"
+                android:paddingStart="2dp"
+                android:paddingEnd="1dp"
+                android:paddingBottom="5dp"
+                android:text="@string/sender"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_sender_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/contact_placeholder"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="0.5dp" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/header_image_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:drawableStart="@drawable/shape_line"
+        android:drawableEnd="@drawable/shape_line"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/app_name"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>
+
+

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container_image_right"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/message_layout_image_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="50dp"
+            android:background="@drawable/shape_bubble_right"
+            android:orientation="vertical">
+
+
+            <com.nsromapa.frenzapp.saytalk.views.RoundCornerLayout
+                android:id="@+id/image_container_right_card"
+                android:layout_width="240dp"
+                android:layout_height="210dp"
+                android:background="@drawable/shape_bubble_right"
+                android:orientation="vertical"
+                app:bottomLeftEnabled="true"
+                app:bottomRightEnabled="false"
+                app:cornerRadius="35dp"
+                app:topLeftEnabled="true"
+                app:topRightEnabled="true">
+
+                <FrameLayout
+                    android:id="@+id/imageFrameLayoutRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageview_image_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/placeholder_image" />
+
+                    <ImageView
+                        android:id="@+id/imageview_image_control_right"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_clear_white_24dp"
+                        android:visibility="gone" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+
+                        <TextView
+                            android:id="@+id/time_image_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="4dp"
+                            android:text="@string/_12_10_pm"
+                            android:textAllCaps="true"
+                            android:textColor="@color/transparent_white_17"
+                            android:textSize="12sp" />
+
+
+
+                        <ImageView
+                            android:id="@+id/delivery_image_status"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tap_retry_image_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:alpha="0.8"
+                        android:background="@drawable/blurred_text_background"
+                        android:drawableStart="@drawable/ic_file_upload_white_24dp"
+                        android:padding="15dp"
+                        android:text="@string/tap_to_retry"
+                        android:textColor="@color/white" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/image_background" />
+
+                    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                        android:id="@+id/progress_bar_image_right"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@color/transparent_black_1"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/progress_drawable"
+                        app:cpb_background_progressbar_color="@color/transparent_black_7"
+                        app:cpb_background_progressbar_width="5dp"
+                        app:cpb_progress="0"
+                        app:cpb_progressbar_color="@color/colorAccent"
+                        app:cpb_progressbar_width="5dp" />
+
+
+                </FrameLayout>
+
+            </com.nsromapa.frenzapp.saytalk.views.RoundCornerLayout>
+
+            <TextView
+                android:id="@+id/messageText_image_right"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:autoLink="all"
+                android:gravity="center"
+                android:maxWidth="230dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/caption_is_used_for_image"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/header_image_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:drawableStart="@drawable/shape_line"
+        android:drawableEnd="@drawable/shape_line"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/app_name"
+        android:textColor="@color/black" />
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+                                       android:layout_width="match_parent"
+                                       xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+            android:layout_height="match_parent"
+                  android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:background="@color/white">
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/setting_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:elevation="0dp"
+            app:itemHorizontalPadding="20dp"
+            app:itemIconTint="@color/colorPrimaryDark"
+            app:itemTextAppearance="@style/TextViewHeading"
+            app:itemTextColor="@color/dark_gray"
+            app:menu="@menu/option_setting_menu"
+            tools:context=".saytalk.activities.SettingsActivity">
+
+
+        </com.google.android.material.navigation.NavigationView>
+
+        <TextView
+            android:id="@+id/logout_btn"
+            style="@style/TextViewHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:drawablePadding="20dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:clickable="false"
+            android:focusable="false"/>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

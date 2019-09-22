@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:id="@+id/container_map_left"
+        android:layout_height="wrap_content" app:ignore="NamespaceTypo">
+
+
+    <TextView
+        android:id="@+id/header_map_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:drawableStart="@drawable/shape_line"
+        android:drawableEnd="@drawable/shape_line"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/yesterday"
+        android:textColor="@color/black" />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/message_layout_map_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_sender_map"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/contact_placeholder" />
+
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:padding="3dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/shape_bubble_left"
+        android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/messageText_map_sender_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:maxWidth="240dp"
+                android:padding="5dp"
+                android:text="@string/sender"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+
+            <com.nsromapa.frenzapp.saytalk.views.RoundCornerLayout
+                android:id="@+id/map_container_left_card"
+                android:layout_width="240dp"
+                android:layout_height="210dp"
+                android:orientation="vertical"
+                app:bottomLeftEnabled="false"
+                app:bottomRightEnabled="false"
+                app:cornerRadius="35dp"
+                app:topLeftEnabled="false"
+                app:topRightEnabled="true">
+
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapview_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    map:cameraZoom="15"
+                    map:liteMode="true"
+                    map:mapType="normal"
+
+                    />
+
+
+            </com.nsromapa.frenzapp.saytalk.views.RoundCornerLayout>
+
+
+            <TextView
+                android:id="@+id/messageText_map_left"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:maxWidth="240dp"
+                android:padding="10dp"
+                android:text="@string/caption_is_used_for_image" />
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/time_map_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:paddingStart="10dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="0dp"
+        android:text="@string/_12_10_pm"
+        android:textColor="@color/warm_grey"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

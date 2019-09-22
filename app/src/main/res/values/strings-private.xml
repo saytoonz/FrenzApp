@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FrenzApp</string>
+
+    <string name="developer_name" translatable="false">Samuel Annin</string>
+    <string name="email" translatable="false">saytoonz05@gmail.com</string>
+
+</resources>
