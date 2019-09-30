@@ -292,9 +292,10 @@ class CreateGroupActivity : AppCompatActivity() {
                         nameOrNumber = groupName))
                     .addOnSuccessListener {
 
-                        if(profileURL.isEmpty())
-                            finish()
-                        else
+                        if (profileURL.isEmpty()){
+                            startActivity(Intent(this, HomeActivity::class.java))
+                        finish()
+                        }else
                             updateProfileUrl(groupID, profileURL)
                     }
 
@@ -367,6 +368,7 @@ class CreateGroupActivity : AppCompatActivity() {
             .child(FirebaseUtils.KEY_PROFILE_PIC_URL)
             .setValue(url)
             .addOnSuccessListener {
+                startActivity(Intent(this, HomeActivity::class.java))
                 finish()
             }
     }

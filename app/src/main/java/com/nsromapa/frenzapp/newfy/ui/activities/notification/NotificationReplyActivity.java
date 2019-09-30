@@ -174,7 +174,7 @@ public class NotificationReplyActivity extends AppCompatActivity {
     private void updateReadStatus() {
 
         String read=getIntent().getStringExtra("read");
-        if(read.equals("false")){
+        if(read=="false"){
             Map<String,Object> readMap=new HashMap<>();
             readMap.put("read","true");
 

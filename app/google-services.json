@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "774143640925",
+    "firebase_url": "https://nsromapa-6afe0.firebaseio.com",
+    "project_id": "nsromapa-6afe0",
+    "storage_bucket": "nsromapa-6afe0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774143640925:android:9b8997b0e0e7bfbb9714b4",
+        "android_client_info": {
+          "package_name": "com.nsromapa.frenzapp.newfy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774143640925-8aek4r3fp1qa496pps7n5stl7k5v2i58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nsromapa.frenzapp.newfy",
+            "certificate_hash": "8d24cb21b0b86d72359292ed93a98a26e7c2dd65"
+          }
+        },
+        {
+          "client_id": "774143640925-f6o5bhuilatlgstjqtgt4ncrr8mdfe66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeS7Ijq-WuX_w-JKbYyheemm5qZ4z5WBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774143640925-f6o5bhuilatlgstjqtgt4ncrr8mdfe66.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

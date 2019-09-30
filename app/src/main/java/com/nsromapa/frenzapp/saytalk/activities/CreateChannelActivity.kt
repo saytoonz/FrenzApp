@@ -303,8 +303,10 @@ class CreateChannelActivity : AppCompatActivity() {
                             nameOrNumber = channelName))
                     .addOnSuccessListener {
 
-                        if(profileURL.isEmpty())
+                        if(profileURL.isEmpty()){
+                            startActivity(Intent(this, HomeActivity::class.java))
                             finish()
+                        }
                         else
                             updateProfileUrl(channelID, profileURL)
                     }
@@ -378,6 +380,7 @@ class CreateChannelActivity : AppCompatActivity() {
             .child(FirebaseUtils.KEY_PROFILE_PIC_URL)
             .setValue(url)
             .addOnSuccessListener {
+                startActivity(Intent(this, HomeActivity::class.java))
                 finish()
             }
     }

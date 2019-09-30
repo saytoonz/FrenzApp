@@ -1,30 +1,24 @@
 package com.nsromapa.frenzapp.saytalk.activities
 
-import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.PopupMenu
 import android.widget.Switch
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.nsromapa.frenzapp.saytalk.utils.FirebaseUtils
-import com.nsromapa.frenzapp.saytalk.utils.Pref
-import com.nsromapa.frenzapp.saytalk.utils.utils.longToast
-import com.nsromapa.frenzapp.saytalk.views.AnimCheckBox
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateModelManager
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateRemoteModel
 import com.nsromapa.frenzapp.R
-import com.nsromapa.frenzapp.newfy.utils.Config
-import es.dmoral.toasty.Toasty
+import com.nsromapa.frenzapp.saytalk.utils.Pref
+import com.nsromapa.frenzapp.saytalk.views.AnimCheckBox
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.dialog_list_selector.*
 import kotlinx.android.synthetic.main.item_selector.view.*
@@ -229,29 +223,28 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 
-    fun onLogoutClick(view: View){
-
-
-        AlertDialog.Builder(this)
-            .setMessage("Logout from this account")
-            .setPositiveButton("Yes") { _, _ ->
-                FirebaseAuth.getInstance().signOut()
-                FirebaseUtils.deleteCurrentToken()
-                val intent = Intent(context, SplashActivity::class.java).apply {
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                }
-
-
-
-                longToast("You have been logged out")
-
-                startActivity(intent)
-                finish()
-            }
-            .setNegativeButton("No",null)
-            .show()
-
-
-    }
+//    fun onLogoutClick(view: View){
+//
+//        AlertDialog.Builder(this)
+//            .setMessage("Logout from this account")
+//            .setPositiveButton("Yes") { _, _ ->
+//                FirebaseAuth.getInstance().signOut()
+//                FirebaseUtils.deleteCurrentToken()
+//                val intent = Intent(context, SplashActivity::class.java).apply {
+//                    flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+//                }
+//
+//
+//
+//                longToast("You have been logged out")
+//
+//                startActivity(intent)
+//                finish()
+//            }
+//            .setNegativeButton("No",null)
+//            .show()
+//
+//
+//    }
 
 }

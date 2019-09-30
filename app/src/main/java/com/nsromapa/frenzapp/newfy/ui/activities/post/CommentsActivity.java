@@ -112,12 +112,7 @@ public class CommentsActivity extends AppCompatActivity {
 
                     Log.i("Comment Message","success");
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Comment Message","failure",e);
-                    }
-                });
+                .addOnFailureListener(e -> Log.w("Comment Message","failure",e));
 
     }
 
@@ -208,7 +203,7 @@ public class CommentsActivity extends AppCompatActivity {
         user_id = getIntent().getStringExtra("user_id");
         post_id = getIntent().getStringExtra("post_id");
         post_desc.setText(Html.fromHtml(getIntent().getStringExtra("post_desc")));
-        owner=getIntent().getBooleanExtra("owner",false);
+        owner = getIntent().getBooleanExtra("owner",false);
 
         mFirestore.collection("Users")
                 .document(user_id)

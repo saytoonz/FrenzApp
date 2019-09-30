@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
@@ -45,6 +47,7 @@ public class Feeds extends Fragment {
     private SwipeRefreshLayout refreshLayout;
     private PostsAdapter mAdapter_v19;
     private StringUtils stringUtils;
+    private FloatingActionButton open_my_posts;
 
     @Nullable
     @Override
@@ -69,8 +72,8 @@ public class Feeds extends Fragment {
 
         stringUtils = new StringUtils();
 
-        refreshLayout=view.findViewById(R.id.refreshLayout);
-
+        refreshLayout = view.findViewById(R.id.refreshLayout);
+        open_my_posts = view.findViewById(R.id.open_my_posts);
         View statsheetView = Objects.requireNonNull(getActivity())
                 .getLayoutInflater().inflate(R.layout.stat_bottom_sheet_dialog, null);
         BottomSheetDialog mmBottomSheetDialog = new BottomSheetDialog(view.getContext());
@@ -96,6 +99,10 @@ public class Feeds extends Fragment {
 
         });
 
+        open_my_posts.setOnClickListener(v->{
+            Toast.makeText(getContext(), "open my posts", Toast.LENGTH_SHORT).show();
+        });
+
         getAllPosts();
     }
 
@@ -115,8 +122,8 @@ public class Feeds extends Fragment {
 
                             if (doc.getType() == DocumentChange.Type.ADDED) {
 
-                                if (!Objects.equals(doc.getDocument().get("userId"),
-                                        Objects.requireNonNull(FirebaseUtils.INSTANCE.getUid()))){
+//                                if (!Objects.equals(doc.getDocument().get("userId"),
+//                                        Objects.requireNonNull(FirebaseUtils.INSTANCE.getUid()))){
                                     mFirestore.collection("Users")
                                             .document(currentUser.getUid())
                                             .collection("Friends")
@@ -146,17 +153,22 @@ public class Feeds extends Fragment {
                                                 Log.w("Error", "listen:error", e);
                                             });
 
-                                }else{
-                                    Post post = doc.getDocument().toObject(Post.class).
-                                            withId(FirebaseUtils.INSTANCE.getUid());
-                                    mPostsList.add(post);
-                                    refreshLayout.setRefreshing(false);
-                                    mAdapter_v19.notifyDataSetChanged();
-                                }
+//                                }else{
+//                                    Post post = doc.getDocument().toObject(Post.class).
+//                                            withId(FirebaseUtils.INSTANCE.getUid());
+//                                    mPostsList.add(post);
+//                                    refreshLayout.setRefreshing(false);
+//                                    mAdapter_v19.notifyDataSetChanged();
+//                                }
 
                             }
                         }
 
+//                        if (mPostsList.size()<1){
+//                            if (refreshLayout.isRefreshing())
+//                                refreshLayout.setRefreshing(false);
+//                            mView.findViewById(R.id.default_item).setVisibility(View.VISIBLE);
+//                        }
 
                     }else{
                         refreshLayout.setRefreshing(false);
@@ -172,11 +184,6 @@ public class Feeds extends Fragment {
                 });
 
 
-        if (mPostsList.size()>1){
-            if (refreshLayout.isRefreshing())
-                refreshLayout.setRefreshing(false);
-            mView.findViewById(R.id.default_item).setVisibility(View.VISIBLE);
-        }
 
     }
 

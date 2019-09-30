@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -187,6 +188,7 @@ public class AnswersActivity extends AppCompatActivity {
         answer=findViewById(R.id.answer);
 
         question_textview.setText(question);
+        question_textview.setMovementMethod(new ScrollingMovementMethod());
 
         author_textview.setText(String.format("Asked by %s ( %s )", author, TimeAgo.using(Long.parseLong(timestamp))));
         toolbar.setSubtitle("Asked by " + author + " ( " + TimeAgo.using(Long.parseLong(timestamp)) + " )");

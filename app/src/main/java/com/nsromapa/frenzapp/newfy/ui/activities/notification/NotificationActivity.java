@@ -163,15 +163,15 @@ public class NotificationActivity extends AppCompatActivity {
             notificationManager.cancel(getIntent().getIntExtra("notification_id", 0));
         }
 
-        updateReadStatus();
+           updateReadStatus();
         initReply();
 
     }
 
     private void updateReadStatus() {
 
-        String read=getIntent().getStringExtra("read");
-        if(read.equals("false")){
+        String read = getIntent().getStringExtra("read");
+        if(read=="false"){
             Map<String,Object> readMap=new HashMap<>();
             readMap.put("read","true");
 
